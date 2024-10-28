@@ -1,6 +1,8 @@
 import java.util.Scanner;
 import physics.calculator.FisikaCalculator;
 import physics.calculator.ParaBolaCalculate;
+import physics.calculator.GeraklbbCalculator; 
+
 
 public class Main {
     public static void main(String[] args) {
@@ -9,6 +11,7 @@ public class Main {
         System.out.println("Pilih Jenis Hitungan:");
         System.out.println("1. Hitung Energi Kinetik");
         System.out.println("2. Hitung Gerak Parabola");
+        System.out.println("3. Hitung Nilai GLBB")
 
         while (true) {
             System.out.print("Pilih 1 atau 2: ");
@@ -46,9 +49,21 @@ public class Main {
                             System.out.println("Waktu Tempuh: " + timeOfFlight + " detik (s)");
                             System.out.println("Jarak Tempuh: " + range + " meter (m)");
                             break;
+                        case "3":
+                            //di dalam case ini ada switch dalam switch diambil dari physics.calculator.GraklbbCalculator 
+                            GeraklbbCalculator glbbCalculator = new GeraklbbCalculator(scanner); 
+                            glbbCalculator.calculateGLBB(); 
+                            break; 
+                        // case "4":
+
+
+                        default:
+                            break;      
                     }
+                    System.out.println("Konvirmasi Ya / Tidak : \s"); 
+                    String next
                     // Mengakhiri loop setelah pilihan valid diproses
-                    break;
+                    
                 } catch (Exception e) {
                     System.out.println("Terjadi kesalahan: " + e.getMessage());
                     scanner.nextLine(); // Membersihkan buffer jika terjadi kesalahan input
